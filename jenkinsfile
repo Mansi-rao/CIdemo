@@ -17,5 +17,9 @@ node{
             }
     }
 
+    stage('notify people'){
+        sh 'echo hello people'
+    }
+
 
 }
