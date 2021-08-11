@@ -1,0 +1,21 @@
+node{
+    stage('Initialization'){
+        sh 'echo dummy step'
+        sh 'sleep 10'
+    }
+
+    stage('Testing'){
+        parallel linux:{
+                node('linux'){
+                    sh 'echo hello from Linux'
+                    sh 'sleep 30'
+                }
+            };
+            ubuntu:{
+                sh 'echo hello from Ubuntu'
+                sh 'sleep 30'
+            }
+    }
+
+
+}
